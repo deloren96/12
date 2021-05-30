@@ -42,5 +42,5 @@ def roll(j):
             b = b+1
     print(12)
     print(g)
-    return [z/i, b/i, /i, ]
+    return [z/i, b/i, r/i, ]
 #br(4+1,1+1, 1/2)
