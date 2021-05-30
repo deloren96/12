@@ -30,7 +30,7 @@ def roll(j):
     
         #print(i,"z",z, per(z/i, 1/37), "z",r, per(r/i,  (1-1/37)/2), "z",b, per(b/i,  (1-1/37)/2),  )
         #print(i,"z",z, (z+1)/i, "z",r, (r+1)/i, "z",b, (b+1)/i,  )
-        print(br(i,z, 1/37), br(i,r, (1-1/37)/2), br(i,b, (1-1/37)/2))
+        #print(br(i,z, 1/37), br(i,r, (1-1/37)/2), br(i,b, (1-1/37)/2))
         x = random.randint(0, 36)
         if x == 1:
             g = g+1
@@ -41,5 +41,6 @@ def roll(j):
         else:
             b = b+1
     print(12)
-    print(g)    
+    print(g)
+    return [z/i, b/i, /i, ]
 #br(4+1,1+1, 1/2)
