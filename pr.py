@@ -40,5 +40,6 @@ def roll(j):
             z = z+1
         else:
             b = b+1
+    print(12)
     print(g)    
 #br(4+1,1+1, 1/2)
