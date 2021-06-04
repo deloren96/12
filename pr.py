@@ -1,4 +1,5 @@
 from math import factorial as f
+import numpy as np
 import random
 '''
 from pr import *
@@ -16,23 +17,45 @@ def br(n,k, p):
     return (f(n)/(f(n-k)*f(k)))*p**k*(1-p)**(n-k)
 
 def per(n, g):
-    #print("i",g-n+g, g)
+    print("i",g-n+g, n)
     n = g-n+g
     if n > g:
         return (n-g)/g
     else:
         return (g-n)/g
 
-def roll(j):
+def roll(i,l):
     g = 0
+    #if not l: l=ones(37)
     z,r,b = 1,18,18
-    for i in range(37, 37+j+1):
     
-        print(i,"z",z, per(z/i, 1/37), "z",r, per(r/i,  (1-1/37)/2), "z",b, per(b/i,  (1-1/37)/2),  )
-        #print(i,"z",z, (z+1)/i, "z",r, (r+1)/i, "z",b, (b+1)/i,  )
-        #print(br(i,z, 1/37), br(i,r, 1/2), br(i,b, 1/2))
-        x = random.randint(0, 36)
-        if x == 1:
+    #print(i,"z",z, per(z/i, 1/37), "z",r, per(r/i,  (1-1/37)/2), "z",b, per(b/i,  (1-1/37)/2),  )
+    #print(i,"z",z, (z+1)/i, "z",r, (r+1)/i, "z",b, (b+1)/i,  )
+    #print(br(i,z, 1/37), br(i,r, 1/2), br(i,b, 1/2))
+    x = random.randint(0, 36)
+    l[x]=l[x]+1
+    t = np.random.uniform(0,1, (1, 37))
+    for (k, v) in enumerate(l):
+
+        t[0][k]= (l[k]/(i+37))*10
+    print(t)
+    return t,l, x
+
+def score(b, l):
+    sc = 0
+    for i, v in enumerate(l):
+        #print(i, b, l[i])
+        if v >= 1:
+            if b == i:
+                print('w', b)
+                sc+=(100*v*36)
+            elif b != v:
+                #print(123, v)
+                sc+=(-100*v)
+    print(sc)
+    return sc
+    [7, 5, 7, 6, 6, 5, 8, 5, 6, 4, 5, 5, 6, 6, 5, 6, 6, 7, 3, 7, 5, 5, 6, 5, 3, 5, 5, 4, 5, 6, 7, 8, 4, 4, 6, 6, 4,]
+    '''if x == 1:
             g = g+1
         if x in [1, 3 ,5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]:
             r = r+1
@@ -40,9 +63,9 @@ def roll(j):
             z = z+1
         else:
             b = b+1
-    print(g)    
+    print(g)'''
 br(4+1,1+1, 1/2)
-
+"""
 import os
 import torch
 from torch import nn
@@ -82,4 +105,4 @@ print(f"Predicted class: {y_pred}")
 print("Model structure: ", model, "\n\n")
 
 for name, param in model.named_parameters():
-    print(f"Layer: {name} | Size: {param.size()} | Values : {param[:2]} \n")
+    print(f"Layer: {name} | Size: {param.size()} | Values : {param[:2]} \n")"""
