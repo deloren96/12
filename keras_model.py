@@ -24,7 +24,7 @@ minimum = 0
 #model.fit()
 def play():
     global sc, l, minimum
-    for i in range(1, 1*37+1):
+    for i in range(1, 1*1+1):
         t, l,b = roll(i, l)
         #a = np.random.uniform(0,1, (1, 2))
         res =  model(t).numpy()[0]
@@ -42,8 +42,8 @@ for _ in range(1, 100+1):
     minimum = 0
     play()
     attempt = 0
-    while sc < 10000:
-        attempt+=37
+    while sc < 1000:
+        attempt+=1
         play()
     print('Попыток:', attempt, 'Дней:', round(attempt/1440, 2), minimum)
 #if sc > 100000:
